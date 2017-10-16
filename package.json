@@ -15,9 +15,7 @@
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^2.0.0",
-    "normalize.css": "^7.0.0",
-    "youtube-video-js": "^1.6.2"
+    "grunt-sass": "^2.0.0"
   },
   "dependencies": {}
 }
