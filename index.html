@@ -8,7 +8,7 @@
             <meta name="author" content="Michał Dydo michal1.dydo@gmail.com">
             <meta name="keywords" content="michał dydo, Michał Dydo, Dydo, junior front-end developer, junior front-end developer slask, junior front-end developer podbeskidzie, junior front-end developer bielsko, front-end bielsko, web-developer, strony bielsko, strony internetowe, tworzenie stron internetowych, strony firmowe, bielsko-biała"
             /> -->
-        
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -80,10 +80,62 @@
         </div>
     </section>
 
-    <section id="education" class="education">
-        <div class="">
-
-        </div>
+    <section id="education" class="education container">
+        <div class="timeline">
+            <div class="chronology">
+                <div class="middle-field">
+                    <div class="middle-field-inside">
+                        <h3>2015</h3>
+                    </div>
+                </div>
+                <div class="field left-field">
+                    <h2>Studnia podyplomowe</h2>
+                    <p>Neuropsychologia kliniczna i diagnoza neuropsychologiczna w ujęcie praktycznym na Uniwersytecie SWPS
+                        w Katowiach</p>
+                    <p class="date"> 08, Wrzesień</p>
+                </div>
+                <div class="middle-field">
+                    <div class="middle-field-inside">
+                        <h3>2012</h3>
+                    </div>
+                </div>
+                <div class="field right-field">
+                    <h2>Praktyka psychologiczna</h2>
+                    <p>W Beskidzkim Zakładzie Leczniczo-Rehabilitacyjnym w Jaworzu</p>
+                    <p class="date"> 25, Październik</p>
+                </div>
+                <div class="field left-field">
+                    <h2>Szkolenie „Mózg a człowiek”</h2>
+                    <p>Badanie i diagnoza neuropsychologiczna część 2 w wymiarze 20 godzin szkoleniowych</p>
+                    <p class="date"> 02, Sierpień</p>
+                </div>
+                <div class="field right-field">
+                    <h2>Szkolenie „Mózg a człowiek”</h2>
+                    <p>Badanie i diagnoza neuropsychologiczna część 1 w wymiarze 25 godzin szkoleniowych</p>
+                    <p class="date"> 30, Lipiec</p>
+                </div>
+                <div class="field left-field">
+                    <h2>Praktyki studenckie</h2>
+                    <p>Wydział filozoficzny Uniwersytetu Jagielońskiego</p>
+                    <p class="date"> 05, Styczeń</p>
+                </div>
+                <div class="middle-field">
+                    <div class="middle-field-inside">
+                        <h3>2011</h3>
+                    </div>
+                </div>
+                <div class="field right-field">
+                    <h2>Psychologia</h2>
+                    <p>W zakładzie penitencjarnym przy ul. Montelupich w Krakowie</p>
+                    <p class="date"> 15, Październik</p>
+                </div>
+                <div class="middle-field">
+                    <div class="middle-field-inside">
+                        <h3>Start</h3>
+                    </div>
+                </div>
+                <div class="vertical-line"></div>
+            </div>
     </section>
 
     <section id="metods" class="metods">
@@ -93,11 +145,67 @@
     </section>
 
     <section id="contact" class="contact">
-        <div class="">
+        <div class="container">
+            <div class="left-content">
+                <h1 class="person">mgr Ewa Gadocha-Cios</h1>
+                <h3 class="title">Psycholog</h3>
+                <div class="details">
+                    <div class="left">
+                        <p class="address">ul. Jaworzańska 43</p>
+                        <p class="address">43-382, Bielsko-Biała</p>
 
+                    </div>
+                    <div class="right">
+                        <p class="phone">Telefon: +48 123 456 789</p>
+                        <p class="phone-second">Telefon 2: +48 33 811 00 50</p>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <div class="facebook social-icon">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div>
+                    <div class="linkedin social-icon">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div class="middle-content-line"></div>
+            <div class="right-content">
+                <div class="contact-form">
+                        <p class="contact-form-label">Skontaktuj się ze mną</p>
+                        <p class="contact-form-description">Jeśli masz jakiekolwiek pytania, chętnie na nie odpowiem.</p>
+                    <form id="ajax-contact" method="post" action="mail.php">
+                        <input required type="text" name="name" id="name" placeholder="Imię i Nazwisko">
+                        <input required type="email" name="email" id="email" placeholder="Adres e-mail" email>
+                        <textarea required name="message" id="message" placeholder="Napisz wiadomość?"></textarea>
+                        <button type="submit" id="submit">Wyślij</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        function initMap() {
+            var danea = { lat: 49.803789, lng: 18.982482 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: danea
+            });
+            var marker = new google.maps.Marker({
+                position: danea,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCncJmncNRucbG9Dd4lyNMXFSdTwTuFk9E&callback=initMap">
+    </script>
 </body>
 
 </html>
