@@ -12,33 +12,57 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        function initMap() {
+            var danea = { lat: 49.803789, lng: 18.982482 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: danea
+            });
+            var marker = new google.maps.Marker({
+                position: danea,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCncJmncNRucbG9Dd4lyNMXFSdTwTuFk9E&callback=initMap">
+    </script>
 </head>
 
 <body>
+    <section id="home" class="home">
+        <div class="home-image">
+            <img src="images/brain.jpg" alt="">
+        </div>
+        <div class="home-banner">
+            <h1>Doktor Ewa! :)</h1>
+            <h3>Pomoże Ci jeśli masz zryty beret</h3>
+        </div>
+    </section>
+
     <nav id="nav">
-        <ul>
-            <li>
-                <a href="#home">Home</a>
-            </li>
-            <li>
+        <div class="menu">
+            <div class="menu-element to-right">
                 <a href="#description">Opis</a>
-            </li>
-            <li>
+            </div>
+            <div class="menu-element to-left">
                 <a href="#about">O mnie</a>
-            </li>
-            <li>
+            </div>
+            <div class="menu-element to-right">
                 <a href="#education">Wykształcenie</a>
-            </li>
-            <li>
+            </div>
+            <div class="menu-element to-left">
                 <a href="#metods">Metody</a>
-            </li>
-            <li>
+            </div>
+            <div class="menu-element to-right">
                 <a href="#contact">Kontakt</a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
 
-    <nav class="menu-mobile" id="nav">
+    <!-- <nav class="menu-mobile" id="nav">
         <i class="fa fa-bars"></i>
         <ul>
             <li>
@@ -60,13 +84,7 @@
                 <a href="#contact">Kontakt</a>
             </li>
         </ul>
-    </nav>
-
-    <section id="home" class="home">
-        <div class="">
-
-        </div>
-    </section>
+    </nav> -->
 
     <section id="description" class="description">
         <div class="">
@@ -75,8 +93,29 @@
     </section>
 
     <section id="about" class="about">
-        <div class="">
+        <div class="container">
+            <div class="left">
+                <div class="left-content">
+                        <p>
+                                Mgr Ewa Gadocha-Cios – diagnoza i rehabilitacja neuropsychologiczna
+                                Ukończyłam studia psychologiczne na wydziale filozoficznym Uniwersytetu Jagiellońskiego w 2011
+                                roku, w ramach których zrealizowałam specjalistyczne zajęcia teoretyczne i praktyczne i złożyłam
+                                przed komisją egzamin specjalizacyjny w zakresie psychologii sądowej. W trakcie pięcioletnich
+                                studiów ukończyłam między innymi następujące kursy z dziedziny neuropsychologii.
 
+                                W trakcie tych studiów odbyłam również praktyki w zakładzie penitencjarnym przy ul. Montelupich w Krakowie.
+
+                                ...
+
+                                ...
+                        </p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="image-content">
+                    <img src="images/ewa.jpg" alt="">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -85,13 +124,16 @@
             <div class="chronology">
                 <div class="middle-field">
                     <div class="middle-field-inside">
-                        <h3>2015</h3>
+                        <h3 onclick="myFunction()">2015 </h3>
                     </div>
                 </div>
                 <div class="field left-field">
                     <h2>Studnia podyplomowe</h2>
-                    <p>Neuropsychologia kliniczna i diagnoza neuropsychologiczna w ujęcie praktycznym na Uniwersytecie SWPS
-                        w Katowiach</p>
+                    <p>Dyplom na Uniwersytecie SWPS w Katowiach</p>
+                    <p class="field-description description-sixth">
+                        Neuropsychologia kliniczna i diagnoza neuropsychologiczna w ujęcie praktycznym na Uniwersytecie SWPS w Katowiach.
+                    </p>
+                    <button class="button-small button-sixth" onclick="openChronologyTab(6)">Więcej...</button>
                     <p class="date"> 08, Wrzesień</p>
                 </div>
                 <div class="middle-field">
@@ -102,21 +144,38 @@
                 <div class="field right-field">
                     <h2>Praktyka psychologiczna</h2>
                     <p>W Beskidzkim Zakładzie Leczniczo-Rehabilitacyjnym w Jaworzu</p>
+                    <p class="field-description description-fifth">
+                        Prowadzenie praktyki psychologicznej w Beskidzkim Zakładzie Leczniczo-Rehabilitacyjnym w Jaworzu, dodatkowo zdobywajanie
+                        wiedzy na konferencjach i szkoleniach z zakresu neuropsychologii.
+                    </p>
+                    <button class="button-small button-fifth" onclick="openChronologyTab(5)">Więcej...</button>
                     <p class="date"> 25, Październik</p>
                 </div>
                 <div class="field left-field">
                     <h2>Szkolenie „Mózg a człowiek”</h2>
                     <p>Badanie i diagnoza neuropsychologiczna część 2 w wymiarze 20 godzin szkoleniowych</p>
+                    <p class="field-description description-fourth">
+                        Badanie i diagnoza neuropsychologiczna cześć 2.
+                    </p>
+                    <button class="button-small button-fourth" onclick="openChronologyTab(4)">Więcej...</button>
                     <p class="date"> 02, Sierpień</p>
                 </div>
                 <div class="field right-field">
                     <h2>Szkolenie „Mózg a człowiek”</h2>
                     <p>Badanie i diagnoza neuropsychologiczna część 1 w wymiarze 25 godzin szkoleniowych</p>
+                    <p class="field-description description-third">
+                        Badanie i diagnoza neuropsychologiczna cześć 1.
+                    </p>
+                    <button class="button-small button-third" onclick="openChronologyTab(3)">Więcej...</button>
                     <p class="date"> 30, Lipiec</p>
                 </div>
                 <div class="field left-field">
                     <h2>Praktyki studenckie</h2>
-                    <p>Wydział filozoficzny Uniwersytetu Jagielońskiego</p>
+                    <p>W zakładzie penitencjarnym w Krakowie</p>
+                    <p class="field-description description-second">
+                        Udział w praktykach studenckich w przy ul. Montelupich w zakładzie penitencjarnym przy ul. Montelupich w Krakowie.
+                    </p>
+                    <button class="button-small button-second" onclick="openChronologyTab(2)">Więcej...</button>
                     <p class="date"> 05, Styczeń</p>
                 </div>
                 <div class="middle-field">
@@ -126,7 +185,13 @@
                 </div>
                 <div class="field right-field">
                     <h2>Psychologia</h2>
-                    <p>W zakładzie penitencjarnym przy ul. Montelupich w Krakowie</p>
+                    <p>Wydział filozoficzny Uniwersytetu Jagielońskiego</p>
+                    <p class="field-description description-first">
+                        Ukończyłam studia psychologiczne na wydziale filozoficznym Uniwersytetu Jagiellońskiego w 2011 roku, w ramach których zrealizowałam
+                        specjalistyczne zajęcia teoretyczne i praktyczne i złożyłam przed komisją egzamin specjalizacyjny
+                        w zakresie psychologii sądowej.
+                    </p>
+                    <button class="button-small button-first" onclick="openChronologyTab(1)">Więcej...</button>
                     <p class="date"> 15, Październik</p>
                 </div>
                 <div class="middle-field">
@@ -175,37 +240,18 @@
             <div class="middle-content-line"></div>
             <div class="right-content">
                 <div class="contact-form">
-                        <p class="contact-form-label">Skontaktuj się ze mną</p>
-                        <p class="contact-form-description">Jeśli masz jakiekolwiek pytania, chętnie na nie odpowiem.</p>
+                    <p class="contact-form-label">Skontaktuj się ze mną</p>
+                    <p class="contact-form-description">Jeśli masz jakiekolwiek pytania, chętnie na nie odpowiem.</p>
                     <form id="ajax-contact" method="post" action="mail.php">
                         <input required type="text" name="name" id="name" placeholder="Imię i Nazwisko">
                         <input required type="email" name="email" id="email" placeholder="Adres e-mail" email>
                         <textarea required name="message" id="message" placeholder="Napisz wiadomość?"></textarea>
-                        <button type="submit" id="submit">Wyślij</button>
+                        <button class="button-normal" type="submit" id="submit">Wyślij</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script>
-        function initMap() {
-            var danea = { lat: 49.803789, lng: 18.982482 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: danea
-            });
-            var marker = new google.maps.Marker({
-                position: danea,
-                map: map
-            });
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCncJmncNRucbG9Dd4lyNMXFSdTwTuFk9E&callback=initMap">
-    </script>
 </body>
 
 </html>

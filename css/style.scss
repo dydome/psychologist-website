@@ -4,12 +4,19 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth:400,700');
 
 //Colors
-$light-mint: rgb(214,239,236);
-$middle-mint: rgb(166, 191, 189);
-$dark-mint: rgb(115,153,150);
-$light-grey: rgb(231,231,231);
-$middle-grey: rgb(202, 202, 202);
-$dark-grey: rgb(179, 178, 178);
+$light-mint: #FCF7F1;
+$middle-mint: #f7ded4;
+$dark-mint: #EDB39B;
+$light-grey: #f2f2f2;
+$middle-grey: #d3d3d3;
+$dark-grey: #999999;
+
+// $light-mint: rgb(214,239,236);
+// $middle-mint: rgb(166, 191, 189);
+// $dark-mint: rgb(115,153,150);
+// $light-grey: rgb(231,231,231);
+// $middle-grey: rgb(202, 202, 202);
+// $dark-grey: rgb(179, 178, 178);
 
 $facebook-color: #3B5998;
 $linkedin-color: #1884BB;;
@@ -58,11 +65,11 @@ body {
 }
 
 nav {
-    z-index: 100;
-    position: relative;
-    height: 50px;
-    width: 100%;
-    line-height: 50px;
+  height: 25px;
+  position: relative;
+  background-color: $light;
+  border-top: 5px solid $dark-mint;
+  width: 100%;
     ul {
       list-style-type: none;
       margin: 0 auto;
@@ -78,26 +85,169 @@ nav {
         }
       }
     }
+    .menu {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      z-index: 5;
+      top: -55px;
+      .menu-element {
+        margin: 1px;
+        position: relative;
+        box-shadow: 0px 5px 20px 0px $middle-grey;
+      }
+      a {
+        position: absolute;
+        text-decoration: none;
+        color: $light;
+        font-size: 17px;
+        font-weight: normal;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 50px;
+        &:hover {
+          color: $middle-grey;
+          transform: scale(1.1);
+        }
+      }
+      .to-right {
+        margin-top: 50px;
+        height: 50px;
+        width: 120px;
+        background-color: $dark-mint;
+        position: relative;
+        // &:before {
+        //   position: absolute;
+        //   bottom: 50px;
+        //   content: '';
+        //   width: 0;
+        //   height: 0;
+        //   border-style: solid;
+        //   border-width: 20px 0px 0px 120px;
+        //   border-color: transparent transparent transparent $dark-mint;
+        // }
+        &:after {
+          position: absolute;
+          top: 50px;
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 20px 120px 0 0;
+          border-color: $dark-mint transparent transparent transparent;
+        }
+      }
+      .to-left {
+        margin-top: 50px;
+        height: 50px;
+        width: 120px;
+        background-color: $dark-mint;
+        position: relative;
+        // &:before {
+        //   position: absolute;
+        //   bottom: 50px;
+        //   content: '';
+        //   width: 0;
+        //   height: 0;
+        //   border-style: solid;
+        //   border-width: 0px 00px 20px 120px;
+        //   border-color: transparent transparent $dark-mint transparent;
+        // }
+        &:after {
+          position: absolute;
+          top: 50px;
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0px 120px 20px 0;
+          border-color: transparent $dark-mint transparent transparent;
+        }
+      }
+    }
   }
 
 .home {
   position: relative;
   width: 100%;
-  height: 100px;
-  background-color: $light-grey;
+  height: 300px;
+  .home-image {
+    display: inline-block;
+    img {
+      height: 100%;
+    }
+  }
+  .home-banner {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    letter-spacing: 0.5;
+    top: -40%;
+    left: 50px;
+    h1, h3 {
+      line-height: 32px;
+    }
+    h1 {
+      font-family: 'Amaranth', sans-serif;
+      background-color: $light-mint;
+      padding: 20px;
+      display: inline-block;
+      left: -50px;
+      position: relative;
+      border-radius: 25px 25px 0px 25px;
+      box-shadow: 0px 5px 20px 0px $middle-grey;
+    }
+    h3 {
+      background-color: $middle-mint;
+      padding: 20px;
+      border-radius: 0px 25px 25px 25px;
+      box-shadow: 0px 5px 20px 0px $middle-grey;
+    }
+  }
 }
 
 .description {
   position: relative;
   width: 100%;
   height: 100px;
-  background-color: $dark-mint;
+  background-color: $light;
 }
 .about {
   position: relative;
   width: 100%;
-  height: 100px;
-  background-color: blue;
+  display: flex;
+  background-color: $light;
+  .container {
+    display: flex;
+    .left,
+    .right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+    .left {
+      .left-content {
+        padding: 0 50px;
+        width: 100%;
+        text-align: center;
+        p {
+          color: $dark-mint;
+          letter-spacing: 0.5;
+          line-height: 17px;
+          font-size: 17px;
+          font-weight: normal;
+        }
+      }    }
+    .image-content {
+      img {
+        width: 250px;
+        height: 300px;
+        border-radius: 50%;
+        box-shadow: 0px 5px 20px 0px $middle-grey;
+      }
+    }
+  }
 }
 .education {
   position: relative;
@@ -112,7 +262,7 @@ nav {
       width: 4px;
       height: 100%;
       margin: 0 auto;
-      background: $light-mint;
+      background: $middle-mint;
       position: absolute;
       top: 0;
       left: 50%;
@@ -129,15 +279,16 @@ nav {
       letter-spacing: 0.5;
       box-shadow: 0px 5px 20px 0px $middle-grey;
       h2 {
-        line-height: 18px;
+        line-height: 20px;
         font-weight: 800;
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 5px;
       }
       p {
-        line-height: 16px;
+        line-height: 17px;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 15px;
+        margin-bottom: 10px;
       }
       .date {
         position: absolute;
@@ -162,6 +313,12 @@ nav {
         border-width: 10px 0 10px 14px;
         border-color: transparent transparent transparent $light-mint;
       }
+      .field-description {
+        line-height: 14px;
+        font-size: 12px;
+        text-align: left;
+        padding-right: 10%;
+      }
       .date {
         right: -110px;
       }
@@ -181,14 +338,28 @@ nav {
         border-width: 10px 14px 10px 0;
         border-color: transparent $light-mint transparent transparent;
       }
+      .field-description {
+        line-height: 14px;
+        font-size: 12px;
+        text-align: right;
+        padding-left: 10%;
+      }
       .date {
         left: -130px;
       }
     }
+    .description-first,
+    .description-second,
+    .description-third,
+    .description-fourth,
+    .description-fifth,
+    .description-sixth {
+      display: none;
+    }
     .middle-field {
       width: 60px;
       height: 60px;
-      background-color: $light-mint;
+      background-color: $middle-mint;
       border-radius: 10px;
       z-index: 2;
       margin: auto;
@@ -197,7 +368,7 @@ nav {
       .middle-field-inside {
         width: 50px;
         height: 50px;
-        background-color: $light-grey;
+        background-color: $light-mint;
         border-radius: 10px;
         position: relative;
         top: 50%;
@@ -216,14 +387,14 @@ nav {
   position: relative;
   width: 100%;
   height: 100px;
-  background-color: $dark-mint;
+  background-color: $light;
   display: none;
 }
 .contact {
   position: relative;
   width: 100%;
   height: auto;
-  background-color: $light-mint;
+  background-color: $light;
   color: $dark-mint;  
   letter-spacing: 0.5;
   .container {
@@ -237,7 +408,7 @@ nav {
         margin-bottom: 10px;
       }
       .title {
-        color: $dark-grey;
+        color: $middle-mint;
         font-size: 18px;
         line-height: 20px;
         margin-bottom: 10px;
@@ -359,13 +530,13 @@ nav {
             height: 40px;
             border: none;
             border-radius: 2px;
-            background-color: #f8fdfc;
+            background-color: rgba(251, 239, 233, 0.5);
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 0 1px 0 $middle-grey;
             font-family: "Titillium Web", sans-serif;
             font-size: 16px;
             line-height: 1.63;
             text-align: left;
-            color: #3e534f;
+            color: $dark-mint;
             padding: 0 15px;
             position: relative;
             margin-bottom: 20px;
@@ -391,13 +562,10 @@ nav {
 // BUTTONS
 
 button {
-  width: 162px;
-  height: 40px;
   border: none;
   border-radius: 2px;
   background-color: $dark-mint;
   box-shadow: 0 2px 4px 0 $middle-grey;
-  font-size: 16px;
   text-align: center;
   color: $light;
   position: relative;
@@ -406,4 +574,16 @@ button {
     box-shadow: 0px 5px 20px 0px $middle-grey;
     background-color: $dark-grey;
   }
+}
+
+.button-normal {
+  width: 162px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.button-small {
+  width: auto;
+  font-size: 12px;
+  padding: 3px 7px;
 }
