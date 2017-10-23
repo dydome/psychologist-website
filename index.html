@@ -33,18 +33,15 @@
 
 <body>
     <section id="home" class="home">
-        <div class="home-image">
-            <img src="images/brain.jpg" alt="">
-        </div>
         <div class="home-banner">
-            <h1>Doktor Ewa! :)</h1>
-            <h3>Pomoże Ci jeśli masz zryty beret</h3>
+            <h1>Neuropsycholog</h1>
+            <h3>Twój najlepszy wybór</h3>
         </div>
     </section>
 
-    <nav id="nav">
+    <nav class="nav" id="nav">
         <div class="menu">
-            <div class="menu-element to-right">
+            <div class="active menu-element to-right">
                 <a href="#description">Opis</a>
             </div>
             <div class="menu-element to-left">
@@ -54,7 +51,7 @@
                 <a href="#education">Wykształcenie</a>
             </div>
             <div class="menu-element to-left">
-                <a href="#metods">Metody</a>
+                <a href="#offer">Oferta</a>
             </div>
             <div class="menu-element to-right">
                 <a href="#contact">Kontakt</a>
@@ -62,14 +59,11 @@
         </div>
     </nav>
 
-    <!-- <nav class="menu-mobile" id="nav">
+    <nav class="menu-mobile" id="nav">
         <i class="fa fa-bars"></i>
-        <ul>
-            <li>
+        <ul class="menu-mobile-ul">
+            <li class="active">
                 <a href="#home">Home</a>
-            </li>
-            <li>
-                <a href="#description">Opis</a>
             </li>
             <li>
                 <a href="#about">O mnie</a>
@@ -78,53 +72,115 @@
                 <a href="#education">Wykształcenie</a>
             </li>
             <li>
-                <a href="#metods">Metody</a>
+                <a href="#offer">Oferta</a>
             </li>
             <li>
                 <a href="#contact">Kontakt</a>
             </li>
         </ul>
-    </nav> -->
+    </nav>
 
     <section id="description" class="description">
-        <div class="">
+        <div class="container">
+            <div class="left-content">
+                <h1>Neuropsychologia</h1>
+                <div class="devider"></div>
+                <p>Jest to nauka z pogranicza medycyny i psychologii i zajmuje się badaniem zależności pomiędzy układem nerwowym
+                    a funkcjami poznawczymi.</p>
+                <p>Diagnoza tych funkcji pozwala na zaplanowanie oddziaływania rehabilitacyjnego i dostosowanie go indywidualnie
+                    do potrzeb pacjenta. Terapia neuropsychologiczna pozwala na usprawnienie, tych funkcji, w których z powodu
+                    uszkodzenia mózgu, pojawiły się deficyty. Pozwala na powrót do wcześniejszych zajęć, życia zawodowego
+                    i rodzinnego. Czas trwania rehabilitacji jest zależny od wieku pacjenta, jego motywacji oraz rozmiarów
+                    uszkodzenia mózgu.</p>
+            </div>
+            <div class="right-content">
+                <p>Diagnostyka neuropsychologiczna pozwala na ocenę fukcjonowania poznawczego pacjenta. Badaniu podlegają takie
+                    aspekty umysłu jak:
+                </p>
+                <table>
+                    <tr>
+                        <td>
+                            <button class="button-normal">Uwaga i zdolność do koncentracji</button>
+                        </td>
+                        <td>
+                            <button class="button-normal">Umiejętności szkolne (czytanie, pisanie, liczenie)</button>
+                        </td>
 
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="button-normal">Mowa i funkcje językowe</button>
+                        </td>
+                        <td>
+                            <button class="button-normal">Pamięć</button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="button-normal">Myślenie</button>
+                        </td>
+                        <td>
+                            <button class="button-normal">Spostrzeganie</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="button-normal">Zachowanie</button>
+                        </td>
+                        <td>
+                            <button class="button-normal">Emocje</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="button-normal">Zdolności wzrokowo-przestrzenne</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
             <div class="left">
-                <div class="left-content">
-                        <p>
-                                Mgr Ewa Gadocha-Cios – diagnoza i rehabilitacja neuropsychologiczna
-                                Ukończyłam studia psychologiczne na wydziale filozoficznym Uniwersytetu Jagiellońskiego w 2011
-                                roku, w ramach których zrealizowałam specjalistyczne zajęcia teoretyczne i praktyczne i złożyłam
-                                przed komisją egzamin specjalizacyjny w zakresie psychologii sądowej. W trakcie pięcioletnich
-                                studiów ukończyłam między innymi następujące kursy z dziedziny neuropsychologii.
-
-                                W trakcie tych studiów odbyłam również praktyki w zakładzie penitencjarnym przy ul. Montelupich w Krakowie.
-
-                                ...
-
-                                ...
-                        </p>
+                <div class="header">
+                    <h1>Mgr Ewa Gadocha-Cios</h1>
+                    <div class="devider"></div>
+                </div>
+                <div class="image-content">
+                    <img src="http://demos.pixelatethemes.com/psychologywp/wp-content/uploads/2017/05/persone-img.jpg" alt="">
                 </div>
             </div>
+
             <div class="right">
-                <div class="image-content">
-                    <img src="images/ewa.jpg" alt="">
-                </div>
+                <p>Zajmuję się diagnozą i rehabilitacją neuropsychologiczną. Prowadzę rehabilitację funkcjonowania poznawczego
+                    pacjentow z uszkodzeniami mozgu w skutek:</p>
+                <ul>
+                    <li>- przebytych udarow mozgu,</li>
+                    <li>- operacji neurochirurgicznych</li>
+                    <li>- urazow glowy</li>
+                </ul>
+                <p>lub z innymi zaburzeniami wpływającymi na poznawcze funkcjonowanie pacjenta.</p>
+                <p>Diagnoza odbywa się poprzez wykonanie testów neuropsychologicznych, ktore w moga zająć od 2 do 3 spotkań.
+                    Następnie rehabilitacja i trening procesów poznawczych jest dobierany indywidualnie do potrzeb każdego
+                    pacjenta, a jego czas trwania jest zależny od wieku pacjenta, rodzaju i rozległości uszkodzenia mózgu,
+                    motywacji chorego i jego chęci do współpracy.</p>
             </div>
         </div>
     </section>
 
     <section id="education" class="education container">
+        <div class="left-content">
+            <h1>Wykształcenie</h1>
+            <div class="devider"></div>
+        </div>
         <div class="timeline">
             <div class="chronology">
                 <div class="middle-field">
                     <div class="middle-field-inside">
-                        <h3 onclick="myFunction()">2015 </h3>
+                        <h3>2015 </h3>
                     </div>
                 </div>
                 <div class="field left-field">
@@ -203,9 +259,108 @@
             </div>
     </section>
 
-    <section id="metods" class="metods">
-        <div class="">
+    <section id="offer" class="offer">
+        <div class="container">
+            <div class="left-content">
+                <h1 class="title">Wykorzystywane metody</h1>
+                <p>Oferuję diagnozę takich funkcji poznawczych, jak:</p>
+                <div class="devider"></div>
+            </div>
+            <div class="offer-content">
+                <div class="offer-block">
+                    <div class="offer-content">
+                        <div class="front">
+                            <img src=images/brain1.png alt="">
+                            <h1>Uwaga i zdolność do koncentracji</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-block">
+                    <div class="offer-content">
+                        <div class="front">
+                            <img src=images/brain2.png alt="">
+                            <h1>Mowa i funkcje językowe</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-block">
+                    <div class="offer-content">
 
+                        <div class="front">
+                            <img src=images/brain3.png alt="">
+                            <h1>Umiejętności szkolne (czytanie, pisanie, liczenie)</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-block">
+                    <div class="offer-content">
+                        <div class="front">
+                            <img src=images/brain4.png alt="">
+                            <h1>Pamięć oraz myślenie</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-block">
+                    <div class="offer-content">
+                        <div class="front">
+                            <img src=images/brain5.png alt="">
+                            <h1>Myślenie</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-block">
+                    <div class="offer-content">
+                        <div class="front">
+                            <img src=images/brain6.png alt="">
+                            <h1>Spostrzeganie</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-block">
+                    <div class="offer-content">
+                        <div class="front">
+                            <img src=images/brain7.png alt="">
+                            <h1>Zdolności wzrokowo-przestrzenne</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-block">
+                    <div class="offer-content">
+                        <div class="front">
+                            <img src=images/brain8.png alt="">
+                            <h1>Emocje i zachowanie</h1>
+                        </div>
+                        <div class="back">
+                            <p>Jakis opis...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="offer-footer">Diagnoza ta pozwala na wykrycie zaburzeń i deficytów w wymienionych funkcjach poznawczych, a przez to na dobranie
+                idealnej dla pacjenta formy rehabilitacji, co pomoże w powrocie do życia rodzinnego, zawodowego, pasji i
+                zainteresowań.
+            </p>
         </div>
     </section>
 
@@ -213,16 +368,17 @@
         <div class="container">
             <div class="left-content">
                 <h1 class="person">mgr Ewa Gadocha-Cios</h1>
+                <div class="devider"></div>
                 <h3 class="title">Psycholog</h3>
                 <div class="details">
                     <div class="left">
                         <p class="address">ul. Jaworzańska 43</p>
-                        <p class="address">43-382, Bielsko-Biała</p>
+                        <p class="address">43-382, <span>Bielsko-Biała</span></p>
 
                     </div>
                     <div class="right">
-                        <p class="phone">Telefon: +48 123 456 789</p>
-                        <p class="phone-second">Telefon 2: +48 33 811 00 50</p>
+                        <p class="phone">Telefon: <span>+48 123 456 789</span></p>
+                        <p class="phone-second">Telefon 2: <span>+48 33 811 00 50</span></p>
                     </div>
                 </div>
                 <div class="social-media">
@@ -242,7 +398,7 @@
                 <div class="contact-form">
                     <p class="contact-form-label">Skontaktuj się ze mną</p>
                     <p class="contact-form-description">Jeśli masz jakiekolwiek pytania, chętnie na nie odpowiem.</p>
-                    <form id="ajax-contact" method="post" action="mail.php">
+                    <form id="ajax-contact" offer="post" action="mail.php">
                         <input required type="text" name="name" id="name" placeholder="Imię i Nazwisko">
                         <input required type="email" name="email" id="email" placeholder="Adres e-mail" email>
                         <textarea required name="message" id="message" placeholder="Napisz wiadomość?"></textarea>
@@ -252,6 +408,7 @@
             </div>
         </div>
     </section>
+    <script type="text/javascript" src="js/scrollspy.min.js"></script>
 </body>
 
 </html>

@@ -3,27 +3,26 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Amaranth:400,700');
 
-//Colors
-$light-mint: #FCF7F1;
-$middle-mint: #f7ded4;
-$dark-mint: #EDB39B;
-$light-grey: #f2f2f2;
-$middle-grey: #d3d3d3;
-$dark-grey: #999999;
+//Breakpoints
+$breakpointDesktop: 1200px;
+$breakpointTablet: 992px;
+$breakpointMobile: 776px;
+$breakpointMiddleMobile: 560px;
+$breakpointSmallMobile: 400px;
 
-// $light-mint: rgb(214,239,236);
-// $middle-mint: rgb(166, 191, 189);
-// $dark-mint: rgb(115,153,150);
-// $light-grey: rgb(231,231,231);
-// $middle-grey: rgb(202, 202, 202);
-// $dark-grey: rgb(179, 178, 178);
+//Colors
+$lightpink: #FCF7F1;
+$darkpink: #f6e7d5;
+$lightgrey: #fbfbfb;
+$darkgrey: #999999;
+$darkgreyopacity: rgba(153, 153, 153, 0.9);
+$greyshadow: #d3d3d3;
 
 $facebook-color: #3B5998;
 $linkedin-color: #1884BB;;
 
 $light: #ffffff;
-
-$grey-background: #D5DBDB;
+$dark: #000000;
 
 * {
   box-sizing: border-box;
@@ -36,23 +35,39 @@ $grey-background: #D5DBDB;
 body {
   background-color: $light;
   font-family: "Titillium Web", sans-serif;
+  letter-spacing: 0.5;
 }
 
 .container {
-  max-width: 976px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px 24px;
   display: block;
+  @media all and (max-width: $breakpointDesktop) {
+    max-width: 992px;
+  }
+  @media all and (max-width: $breakpointTablet) {
+    max-width: 776px;
+  }
+  @media all and (max-width: $breakpointMobile) {
+    width: 100%;
+  }
 }
 
 .left-content {
   width: calc(50% - 1px);
   display: inline-block;
+  @media all and (max-width: $breakpointMobile) {
+    width: 100%;
+  }
 }
 
 .right-content {
   width: calc(50% - 1px);
   display: inline-block;
+  @media all and (max-width: $breakpointMobile) {
+    width: 100%;
+  }
 }
 
 .middle-content-line {
@@ -62,39 +77,103 @@ body {
 
 .menu-mobile {
   display: none;
-}
-
-nav {
-  height: 25px;
-  position: relative;
-  background-color: $light;
-  border-top: 5px solid $dark-mint;
-  width: 100%;
+  
+  @media all and (max-width: $breakpointMobile) {
+    display: block;
+    position: fixed;
+    z-index: 50;
+    top: 15px;
+    left: 15px;
+    i {
+      font-size: 40px;
+      color: $darkgrey;
+    }
+    .menu-mobile-ul {
+      display: none;
+      width: 210px;
+      height: auto;
+      background-color: $darkgreyopacity;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      left: 40px;
+      top: -35px;
+    }
+    .active-ul {
+      display: flex;
+      width: 210px;
+      height: auto;
+      background-color: $darkgreyopacity;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      left: 40px;
+      top: -35px;
+    }
     ul {
-      list-style-type: none;
-      margin: 0 auto;
-      i {
-        display: none;
-      }
       li {
-        display: inline-block;
-        position: relative;
+        padding: 20px 0;
+        width: 80%;
         text-align: center;
+        border-bottom: 1px solid $darkpink;
+        &:last-child {
+          border: none;
+        }
         a {
+          color: $darkpink;
+          font-size: 20px;
           text-decoration: none;
         }
       }
     }
+  }
+}
+
+.nav {
+  height: 25px;
+  position: relative;
+  background-color: $light;
+  border-top: 5px solid $darkgrey;
+  width: 100%;
+  @media all and (max-width: $breakpointMobile) {
+    height: 0px;
+  }
+    // ul {
+    //   list-style-type: none;
+    //   margin: 0 auto;
+    //   i {
+    //     display: none;
+    //   }
+    //   li {
+    //     display: inline-block;
+    //     position: relative;
+    //     text-align: center;
+    //     a {
+    //       text-decoration: none;
+    //     }
+    //   }
+    // }
     .menu {
       position: relative;
       display: flex;
       justify-content: center;
       z-index: 5;
       top: -55px;
+      @media all and (max-width: $breakpointMobile) {
+        display: none;
+      }
       .menu-element {
-        margin: 1px;
+        margin: 0 1px;
         position: relative;
-        box-shadow: 0px 5px 20px 0px $middle-grey;
+        box-shadow: 0px 5px 20px 0px $greyshadow;
+        &:hover {
+          box-shadow: 0px 5px 70px 0px $greyshadow;
+          a {
+            color: $darkgrey;
+          }
+        }
       }
       a {
         position: absolute;
@@ -106,27 +185,20 @@ nav {
         width: 100%;
         text-align: center;
         line-height: 50px;
-        &:hover {
-          color: $middle-grey;
-          transform: scale(1.1);
-        }
       }
       .to-right {
         margin-top: 50px;
         height: 50px;
         width: 120px;
-        background-color: $dark-mint;
+        background-color: $darkgrey;
         position: relative;
-        // &:before {
-        //   position: absolute;
-        //   bottom: 50px;
-        //   content: '';
-        //   width: 0;
-        //   height: 0;
-        //   border-style: solid;
-        //   border-width: 20px 0px 0px 120px;
-        //   border-color: transparent transparent transparent $dark-mint;
-        // }
+
+        &:hover {
+          background-color: $darkpink;
+          &:after {
+            border-color: $darkpink transparent transparent transparent;
+          }
+        }
         &:after {
           position: absolute;
           top: 50px;
@@ -135,25 +207,21 @@ nav {
           height: 0;
           border-style: solid;
           border-width: 20px 120px 0 0;
-          border-color: $dark-mint transparent transparent transparent;
+          border-color: $darkgrey transparent transparent transparent;
         }
       }
       .to-left {
         margin-top: 50px;
         height: 50px;
         width: 120px;
-        background-color: $dark-mint;
+        background-color: $darkgrey;
         position: relative;
-        // &:before {
-        //   position: absolute;
-        //   bottom: 50px;
-        //   content: '';
-        //   width: 0;
-        //   height: 0;
-        //   border-style: solid;
-        //   border-width: 0px 00px 20px 120px;
-        //   border-color: transparent transparent $dark-mint transparent;
-        // }
+        &:hover {
+          background-color: $darkpink;
+          &:after {
+            border-color: transparent $darkpink transparent transparent;
+          }
+        }
         &:after {
           position: absolute;
           top: 50px;
@@ -162,7 +230,7 @@ nav {
           height: 0;
           border-style: solid;
           border-width: 0px 120px 20px 0;
-          border-color: transparent $dark-mint transparent transparent;
+          border-color: transparent $darkgrey transparent transparent;
         }
       }
     }
@@ -171,7 +239,11 @@ nav {
 .home {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 500px;
+  background-image: url("../images/background2.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   .home-image {
     display: inline-block;
     img {
@@ -179,30 +251,44 @@ nav {
     }
   }
   .home-banner {
-    display: inline-block;
-    position: relative;
+    position: absolute;
     font-size: 30px;
-    letter-spacing: 0.5;
-    top: -40%;
-    left: 50px;
+    top: 100px;
+    left: 130px;
+    @media all and (max-width: $breakpointMobile) {
+      left: 60px;
+    }
+    @media all and (max-width: $breakpointSmallMobile) {
+      left: 60px;
+    }
     h1, h3 {
       line-height: 32px;
+      @media all and (max-width: $breakpointSmallMobile) {
+        font-size: 18px;
+      }
     }
     h1 {
       font-family: 'Amaranth', sans-serif;
-      background-color: $light-mint;
+      background-color: $light;
       padding: 20px;
       display: inline-block;
       left: -50px;
       position: relative;
       border-radius: 25px 25px 0px 25px;
-      box-shadow: 0px 5px 20px 0px $middle-grey;
+      box-shadow: 0px 5px 20px 0px $greyshadow;
+      @media all and (max-width: $breakpointSmallMobile) {
+        padding: 10px;
+      }
     }
     h3 {
-      background-color: $middle-mint;
+      background-color: $light;
       padding: 20px;
       border-radius: 0px 25px 25px 25px;
-      box-shadow: 0px 5px 20px 0px $middle-grey;
+      box-shadow: 0px 5px 20px 0px $greyshadow;
+      @media all and (max-width: $breakpointSmallMobile) {
+        margin-right: 15px;
+        padding: 10px;
+      }
     }
   }
 }
@@ -210,207 +296,469 @@ nav {
 .description {
   position: relative;
   width: 100%;
-  height: 100px;
-  background-color: $light;
+  height: auto;
+  margin-top: 40px;
+  @media all and (max-width: $breakpointMobile) {
+    margin-top: 0px;
+  }
+  .container {
+    display: flex;
+    @media all and (max-width: $breakpointMobile) {
+      display: block;
+    }
+    h1 {
+      font-size: 27px;
+      font-family: 'Amaranth', sans-serif;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 1.63;
+    }
+    .devider {
+      height: 4px;
+      width: 50%;
+      background-color: $lightpink;
+      margin-bottom: 15px;
+    }
+    .left-content {
+      padding-right: 25px;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+    .right-content {
+      margin-top: 60px;
+      padding-left: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      @media all and (max-width: $breakpointMobile) {
+        padding-left: 0;
+        margin-top: 10px;
+      }
+      tr {
+        td {
+          height: 20px;
+          width: 50%;
+          text-align: center;
+          button {
+            width: 90%;
+            height: auto;
+            margin: 5px;
+            padding: 5px;
+            cursor: auto;
+          }
+        }
+      }
+    }
+  }
 }
 .about {
   position: relative;
   width: 100%;
+  height: auto;
   display: flex;
-  background-color: $light;
+  background-color: $lightpink;
   .container {
     display: flex;
+    @media all and (max-width: $breakpointMobile) {
+      display: block;
+    }
     .left,
     .right {
       width: 50%;
+      @media all and (max-width: $breakpointMobile) {
+        width: 100%;
+      }
+    }
+    .right {
       display: flex;
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      @media all and (max-width: $breakpointMobile) {
+        margin-top: 30px;
+      }
     }
     .left {
-      .left-content {
-        padding: 0 50px;
-        width: 100%;
-        text-align: center;
-        p {
-          color: $dark-mint;
-          letter-spacing: 0.5;
-          line-height: 17px;
-          font-size: 17px;
-          font-weight: normal;
+      .header {
+        margin-bottom: 30px;
+        h1 {
+          text-align: left;
+          font-size: 27px;
+          font-family: 'Amaranth', sans-serif;
+          margin-bottom: 15px;
         }
-      }    }
-    .image-content {
-      img {
-        width: 250px;
-        height: 300px;
-        border-radius: 50%;
-        box-shadow: 0px 5px 20px 0px $middle-grey;
+        .devider {
+          height: 4px;
+          width: 50%;
+          background-color: $darkgrey;
+          margin-bottom: 15px;
+        }
+      }
+      .image-content {
+        display: flex;
+        justify-content: center;
+        img {
+          box-shadow: 0px 5px 20px 0px $greyshadow;
+        }
+      } 
+    }
+    .right {
+      align-items: left;
+      p {
+        font-size: 16px;
+        line-height: 1.63;
+        font-weight: normal;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      ul {
+        margin: 10px 0;
+        text-align: left;
+        li {
+          font-size: 16px;
+          line-height: 1.63;
+        }
       }
     }
   }
 }
+
 .education {
   position: relative;
   width: 100%;
-  background-color: $light;
   margin-top: 30px;
   margin-bottom: 30px;
   padding-top: 0px;
   padding-bottom: 0px;
-  .timeline {
-    .vertical-line {
-      width: 4px;
-      height: 100%;
-      margin: 0 auto;
-      background: $middle-mint;
-      position: absolute;
-      top: 0;
-      left: 50%;
-    }
-    .field {
-      padding: 15px;
-      position: relative;
-      border-radius: 4px;
-      background: $light-mint;
-      max-width: 350px;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      color: $dark-mint;
-      letter-spacing: 0.5;
-      box-shadow: 0px 5px 20px 0px $middle-grey;
-      h2 {
-        line-height: 20px;
-        font-weight: 800;
-        font-size: 18px;
-        margin-bottom: 5px;
-      }
-      p {
-        line-height: 17px;
-        font-weight: normal;
-        font-size: 15px;
-        margin-bottom: 10px;
-      }
-      .date {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 14px;       
-      }
-    }
-    .left-field {
-      left: 50%;
-      transform: translateX(calc(-100% - 20px));
-      text-align: right;
-      &:after {
-        position: absolute;
-        right: -14px;
-        top: 50%;
-        transform: translateY(-50%);
-        content: "";
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px 0 10px 14px;
-        border-color: transparent transparent transparent $light-mint;
-      }
-      .field-description {
-        line-height: 14px;
-        font-size: 12px;
-        text-align: left;
-        padding-right: 10%;
-      }
-      .date {
-        right: -110px;
-      }
-    }
-    .right-field {
-      left: calc(50% + 25px);
+  .left-content {
+    height: 60px;
+    h1 {
       text-align: left;
-      &:after {
-        position: absolute;
-        left: -14px;
-        top: 50%;
-        transform: translateY(-50%);
-        content: "";
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px 14px 10px 0;
-        border-color: transparent $light-mint transparent transparent;
-      }
-      .field-description {
-        line-height: 14px;
-        font-size: 12px;
-        text-align: right;
-        padding-left: 10%;
-      }
-      .date {
-        left: -130px;
-      }
+      font-size: 27px;
+      font-family: 'Amaranth', sans-serif;
+      margin-bottom: 15px;
     }
-    .description-first,
-    .description-second,
-    .description-third,
-    .description-fourth,
-    .description-fifth,
-    .description-sixth {
-      display: none;
+    .devider {
+      height: 4px;
+      width: 50%;
+      background-color: $lightpink;
+      margin-bottom: 15px;
     }
-    .middle-field {
-      width: 60px;
-      height: 60px;
-      background-color: $middle-mint;
-      border-radius: 10px;
-      z-index: 2;
-      margin: auto;
+  }
+  .timeline {
+    .chronology {
+      display: flex;
+      flex-direction: column;
       position: relative;
-      box-shadow: 0px 5px 20px 0px $middle-grey;
-      .middle-field-inside {
-        width: 50px;
-        height: 50px;
-        background-color: $light-mint;
-        border-radius: 10px;
-        position: relative;
-        top: 50%;
-        transform: translate(-50%, -50%);
+      .vertical-line {
+        width: 3px;
+        height: calc(100% - 60px);
+        margin: 0 auto;
+        background: $darkgrey;
+        position: absolute;
+        top: 60px;
         left: 50%;
-        line-height: 50px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: bold;
-        color: $dark-mint;
+        @media all and (max-width: $breakpointMobile) {
+          top: 20px;
+          left: 20px;
+        }
+      }
+      .field {
+        padding: 17px;
+        position: relative;
+        border-radius: 4px;
+        background: transparent;
+        max-width: 350px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $dark;
+        box-shadow: 0px 5px 20px 0px $greyshadow;
+        @media all and (max-width: $breakpointMobile) {
+          margin-bottom: 25px;
+          max-width: 450px;
+        }
+        @media all and (max-width: $breakpointMiddleMobile) {
+          max-width: 315px;
+        }
+        @media all and (max-width: $breakpointSmallMobile) {
+          max-width: 250px;
+        }
+        @media all and (max-width: 340px) {
+          max-width: 190px;
+        }
+        h2 {
+          line-height: 1.43;
+          font-weight: 800;
+          font-size: 16px;
+          margin-bottom: 8px;
+        }
+        p {
+          line-height: 1.43;
+          font-weight: normal;
+          font-size: 14px;
+        }
+        .date {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 13px; 
+          @media all and (max-width: $breakpointMobile) {
+            top: -25px;
+            transform: none;
+          }      
+        }
+      }
+      .left-field {
+        left: 50%;
+        transform: translateX(calc(-100% - 20px));
+        text-align: right;
+        @media all and (max-width: $breakpointMobile) {
+          left: 40px;
+          transform: none;
+        }
+        h2 {
+          margin-left: 65px;
+        }
+        &:after {
+          position: absolute;
+          right: -10px;
+          top: 50%;
+          transform: translateY(-50%);
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 0 5px 10px;
+          border-color: transparent transparent transparent $darkgrey;
+          @media all and (max-width: $breakpointMobile) {
+            left: -10px;
+            border-width: 5px 10px 5px 0;
+            border-color: transparent $darkgrey transparent transparent;
+  
+          }
+        }
+        .field-description {
+          line-height: 14px;
+          font-size: 12px;
+          text-align: left;
+          padding-right: 10%;
+          margin-top: 8px;
+        }
+        button {
+          position: absolute;
+          left: 10px;
+          top: 10px;
+        }
+        .date {
+          right: -110px;
+          @media all and (max-width: $breakpointMobile) {
+            position: absolute;
+            right: 15px;
+          }
+        }
+      }
+      .right-field {
+        left: calc(50% + 25px);
+        text-align: left;
+        @media all and (max-width: $breakpointMobile) {
+          left: 40px;
+        }
+        h2 {
+          margin-right: 65px;
+        }
+        &:after {
+          position: absolute;
+          left: -10px;
+          top: 50%;
+          transform: translateY(-50%);
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 10px 5px 0;
+          border-color: transparent $darkgrey transparent transparent;
+        }
+        .field-description {
+          line-height: 14px;
+          font-size: 12px;
+          text-align: right;
+          padding-left: 10%;
+          margin-top: 8px;
+        }
+        button {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+        .date {
+          left: -130px;
+          @media all and (max-width: $breakpointMobile) {
+            position: absolute;
+            left: 15px;
+          }
+        }
+      }
+      .description-first,
+      .description-second,
+      .description-third,
+      .description-fourth,
+      .description-fifth,
+      .description-sixth {
+        display: none;
+      }
+      .middle-field {
+        width: 40px;
+        height: 40px;
+        background-color: $darkgrey;
+        z-index: 2;
+        margin: auto;
+        position: relative;
+        box-shadow: 0px 5px 20px 0px $greyshadow;
+        border-radius: 100%;
+        @media all and (max-width: $breakpointMobile) {
+          margin: 0;
+        }
+        .middle-field-inside {
+          width: 35px;
+          height: 35px;
+          background-color: $light;
+          position: relative;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          line-height: 35px;
+          text-align: center;
+          font-size: 13px;
+          font-weight: bold;
+          color: $darkgrey;
+          border-radius: 100%;
+        }
       }
     }
   }
 }
-.metods {
+.offer {
   position: relative;
   width: 100%;
-  height: 100px;
-  background-color: $light;
-  display: none;
+  height: auto;
+  background-color: $lightpink;
+  .container {
+    .title {
+      text-align: left;
+      font-size: 27px;
+      font-family: 'Amaranth', sans-serif;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    .devider {
+      height: 4px;
+      width: 50%;
+      background-color: $darkgrey;
+      margin-bottom: 15px;
+    }
+    .offer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .offer-block {
+        width: 224px;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 10px;
+        .offer-content {
+          cursor: pointer;
+          width: 250px;
+          height: 140px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px 10px;
+          background-color: #FAFAFA;
+          box-shadow: 0px 5px 20px 0px $greyshadow;
+          transition: 0.6s;
+          transform-style: preserve-3d;
+          position: relative;
+          .front, .back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          .front {
+            z-index: 31;
+            transform: rotateY(0deg);
+          }
+          .back {
+            transform: rotateY(180deg);
+          }
+
+          &:hover {
+            transform: rotateY(180deg);
+          }
+          img {
+            height: 55px;
+            width: auto;          
+            filter: grayscale(100%);
+          }
+          h1 {
+            font-weight: normal;
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .offer-footer {
+      margin-top: 20px;
+      line-height: 1.63;
+    }
+  }
 }
 .contact {
   position: relative;
   width: 100%;
   height: auto;
   background-color: $light;
-  color: $dark-mint;  
-  letter-spacing: 0.5;
+  color: $dark;  
   .container {
     display: flex;
+    @media all and (max-width: $breakpointMobile) {
+      display: block;
+    }
     .left-content {
-      padding: 15px;
       text-align: center;
       .person {
-        font-size: 40px;
+        font-size: 27px;
         font-family: 'Amaranth', sans-serif;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+      }
+      .devider {
+        height: 4px;
+        width: 50%;
+        background-color: $lightpink;
+        margin: 0 auto 15px;
       }
       .title {
-        color: $middle-mint;
         font-size: 18px;
-        line-height: 20px;
+        line-height: 1.63;
         margin-bottom: 10px;
       }
       .details {
@@ -423,6 +771,11 @@ nav {
           p {
             font-size: 14px;
             line-height: 25px;
+            span {
+              @media all and (max-width: $breakpointMobile) {
+                display: block;
+              }
+            }
           }
         }
         .right {
@@ -432,6 +785,11 @@ nav {
           p {
             font-size: 14px;
             line-height: 25px;
+            span {
+              @media all and (max-width: $breakpointMobile) {
+                display: block;
+              }
+            }
           }
         }
       }
@@ -445,9 +803,9 @@ nav {
           border-radius: 100%;
           margin: 0 5px;
           cursor: pointer;
-          background-color: $dark-mint;
-          color: $light-grey;
-          box-shadow: 0px 5px 20px 0px $middle-grey;
+          background-color: $lightpink;
+          color: $darkgrey;
+          box-shadow: 0px 5px 20px 0px $greyshadow;
           i {
             line-height: 30px;
             text-align: center;
@@ -476,48 +834,49 @@ nav {
           margin: auto;
           width: 90%;
           height: 300px;
-          background-color: $dark-grey;
-          box-shadow: 0px 5px 20px 0px $middle-grey;
+          background-color: $darkpink;
+          box-shadow: 0px 5px 20px 0px $greyshadow;
         }
       }
     }
     .middle-content-line {
       width: 2px;
-      background: $middle-mint;
+      background: $darkgrey;
       border-radius: 100%;
     }
     .right-content {
-      padding: 15px;
       display: flex;
       justify-content: center;
+      @media all and (max-width: $breakpointMobile) {
+        margin-top: 30px;
+      }
       .contact-form {
         width: 90%;
         height: auto;
         padding: 25px;
         border-radius: 5px;
         background-color: $light;
-        box-shadow: 0 5px 20px 0 $middle-grey;
+        box-shadow: 0 5px 20px 0 $greyshadow;
         position: relative;
         display: block;
         overflow: hidden;
-        letter-spacing: 0.5;
         .contact-form-label {
           position: relative;
           font-size: 22px;
           font-weight: 500;
           line-height: 1.44;
           text-align: left;
-          color: $dark-mint;
+          color: $dark;
           display: block;
           margin-bottom: 15px;
         }
         .contact-form-description {
           position: relative;
-          font-size: 17px;
+          font-size: 16px;
           font-weight: 300;
           line-height: 1.63;
           text-align: left;
-          color: $dark-mint;
+          color: $dark;
           display: block;
           margin-bottom: 20px;
         }
@@ -530,13 +889,13 @@ nav {
             height: 40px;
             border: none;
             border-radius: 2px;
-            background-color: rgba(251, 239, 233, 0.5);
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 0 1px 0 $middle-grey;
+            background-color: $lightgrey;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 0 1px 0 $greyshadow;
             font-family: "Titillium Web", sans-serif;
             font-size: 16px;
             line-height: 1.63;
             text-align: left;
-            color: $dark-mint;
+            color: $darkgrey;
             padding: 0 15px;
             position: relative;
             margin-bottom: 20px;
@@ -548,7 +907,7 @@ nav {
           }
           input:focus,
           textarea:focus {
-              border: solid 1px $dark-mint;
+              border: solid 1px $dark;
           }
           button {
             float: right;
@@ -564,15 +923,15 @@ nav {
 button {
   border: none;
   border-radius: 2px;
-  background-color: $dark-mint;
-  box-shadow: 0 2px 4px 0 $middle-grey;
+  background-color: $lightpink;
+  box-shadow: 0 2px 4px 0 $greyshadow;
   text-align: center;
-  color: $light;
+  color: $darkgrey;
   position: relative;
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 5px 20px 0px $middle-grey;
-    background-color: $dark-grey;
+    box-shadow: 0px 5px 20px 0px $greyshadow;
+    background-color: $darkpink;
   }
 }
 
@@ -585,5 +944,5 @@ button {
 .button-small {
   width: auto;
   font-size: 12px;
-  padding: 3px 7px;
+  padding: 3px 10px;
 }
