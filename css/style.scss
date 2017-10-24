@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Amaranth:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
 //Breakpoints
 $breakpointDesktop: 1200px;
@@ -13,9 +14,6 @@ $breakpointSmallMobile: 400px;
 //Colors
 $lightpink: #FCF7F1;
 $darkpink: #f6e7d5;
-
-// $lightpink: #eafbf3;
-// $darkpink: #cbf4e2;
 $lightgrey: #fbfbfb;
 $darkgrey: #999999;
 $darkgreyopacity: rgba(153, 153, 153, 0.9);
@@ -143,21 +141,6 @@ body {
   @media all and (max-width: $breakpointMobile) {
     height: 0px;
   }
-    // ul {
-    //   list-style-type: none;
-    //   margin: 0 auto;
-    //   i {
-    //     display: none;
-    //   }
-    //   li {
-    //     display: inline-block;
-    //     position: relative;
-    //     text-align: center;
-    //     a {
-    //       text-decoration: none;
-    //     }
-    //   }
-    // }
     .menu {
       position: relative;
       display: flex;
@@ -264,15 +247,11 @@ body {
     @media all and (max-width: $breakpointSmallMobile) {
       left: 60px;
     }
-    h1, h3 {
-      line-height: 32px;
-      @media all and (max-width: $breakpointSmallMobile) {
-        font-size: 18px;
-      }
-    }
     h1 {
       font-family: 'Amaranth', sans-serif;
+      font-size: 27px;
       background-color: $light;
+      border: 1px solid $lightpink;
       padding: 20px;
       display: inline-block;
       left: -50px;
@@ -280,17 +259,24 @@ body {
       border-radius: 25px 25px 0px 25px;
       box-shadow: 0px 5px 20px 0px $greyshadow;
       @media all and (max-width: $breakpointSmallMobile) {
-        padding: 10px;
+        padding: 15px;
       }
     }
     h3 {
-      background-color: $light;
+      width: auto;
+      font-size: 18px;
+      line-height: 23px;
+      background-color: $lightpink;
       padding: 20px;
       border-radius: 0px 25px 25px 25px;
       box-shadow: 0px 5px 20px 0px $greyshadow;
+      border: 1px solid $darkpink;
+      margin-right: 15px;
+      @media all and (max-width: "500px") {
+        max-width: 285px;
+      }
       @media all and (max-width: $breakpointSmallMobile) {
-        margin-right: 15px;
-        padding: 10px;
+        padding: 15px;
       }
     }
   }
@@ -831,6 +817,9 @@ body {
           }
         }
       }
+      .logo-danea {
+        margin-top: 20px;
+      }
       .map-container {
         margin-top: 25px;
         #map {
@@ -918,6 +907,24 @@ body {
         }
       }
     }
+  }
+}
+
+footer {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333;
+  font-weight: 300;
+  font-size: 12px;
+  p {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    color: #FFC40A;
   }
 }
 

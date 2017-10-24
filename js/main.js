@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+
     $("html,body").animate({ scrollTop: 0 }, 100);
     $("a").on('click', function (event) {
         if (this.hash !== "") {
@@ -41,12 +42,11 @@ $(document).ready(function () {
 
     //Navbar Offset
     var top1 = $('#home').offset().top;
-    var top2 = $('#about').offset().top;
-    var top3 = $('#education').offset().top;
-    var top4 = $('#offer').offset().top;
-    var top5 = $('#contact').offset().top;
-
-    console.log(top1, top2, top3, top4, top5);
+    var top2 = $('#description').offset().top;
+    var top3 = $('#about').offset().top;
+    var top4 = $('#education').offset().top;
+    var top5 = $('#offer').offset().top;
+    var top6 = $('#contact').offset().top;
 
     var $lightpink = "#FCF7F1";
     var $darkpink = "#f6e7d5";
@@ -56,20 +56,26 @@ $(document).ready(function () {
     var $greyshadow = "#d3d3d3";
 
     $(document).scroll(function () {
-        var scrollPos = $(document).scrollTop();
+        var scrollPos = $(document).scrollTop() + 40;
         if (scrollPos >= top1 && scrollPos < top2) {
-            $('.fa-bars').css('color', $darkgrey);
+            $('.fa-bars').css("color", $darkgrey);
         } else if (scrollPos >= top2 && scrollPos < top3) {
-            $('.fa-bars').css('color', $darkgrey);
-        } else if (scrollPos >= top3 && scrollPos < top4) {
             $('.fa-bars').css('color', $darkpink);
-        } else if (scrollPos >= top4 && scrollPos < top5) {
+        } else if (scrollPos >= top3 && scrollPos < top4) {
             $('.fa-bars').css('color', $darkgrey);
-        } else if (scrollPos >= top5) {
+        } else if (scrollPos >= top4 && scrollPos < top5) {
+            $('.fa-bars').css('color', $darkpink);
+        } else if (scrollPos >= top5 && scrollPos < top6) {
+            $('.fa-bars').css('color', $darkgrey);
+        } else if (scrollPos >= top6) {
             $('.fa-bars').css('color', $darkpink);
         }
     });
 
+    //Date in footer
+    var date = new Date();
+    var year = date.getFullYear();
+    $( ".footer-year" ).append(year);
 });
 
 function openChronologyTab(index) {
